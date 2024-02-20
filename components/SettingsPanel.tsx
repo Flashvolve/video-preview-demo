@@ -30,17 +30,17 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = (props) => {
       <Group>
         <GroupTitle>Intro</GroupTitle>
         <TextInput
-          placeholder="Lorem ipsum dolor sit amet"
+          placeholder="FLASHVOLVE"
           onFocus={() => ensureElementVisibility(props.preview, 'Title', 1.5)}
           onChange={(e) => setPropertyValue(props.preview, 'Title', e.target.value, modificationsRef.current)}
         />
         <TextInput
-          placeholder="Enter your tagline here"
+          placeholder="APRESENTA"
           onFocus={() => ensureElementVisibility(props.preview, 'Tagline', 1.5)}
           onChange={(e) => setPropertyValue(props.preview, 'Tagline', e.target.value, modificationsRef.current)}
         />
         <TextInput
-          placeholder="A second and longer text here ✌️"
+          placeholder="UMA NOVA FORMA DE CRIAR VÍDEOS"
           onFocus={() => ensureElementVisibility(props.preview, 'Start-Text', 1.5)}
           onChange={(e) => setPropertyValue(props.preview, 'Start-Text', e.target.value, modificationsRef.current)}
         />
@@ -49,7 +49,7 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = (props) => {
       <Group>
         <GroupTitle>Outro</GroupTitle>
         <TextInput
-          placeholder="Your Call To Action Here"
+          placeholder="TUDO ISSO EM TEMPO REAL"
           onFocus={() => ensureElementVisibility(props.preview, 'Final-Text', 1.5)}
           onChange={(e) => setPropertyValue(props.preview, 'Final-Text', e.target.value, modificationsRef.current)}
         />
@@ -61,14 +61,14 @@ export const SettingsPanel: React.FC<SettingsPanelProps> = (props) => {
         const nestedElements = props.preview.getElements(slideElement);
         const textElement = nestedElements.find((element) => element.source.name?.endsWith('-Text'));
         const imageElement = nestedElements.find((element) => element.source.name?.endsWith('-Image'));
-
+        const textElement2 = "Digite a legenda da imagem"
         return (
           <Group key={i}>
             <GroupTitle>Slide {i + 1}</GroupTitle>
             {textElement && (
               <Fragment>
                 <TextInput
-                  placeholder={textElement.source.text}
+                  placeholder={"Digite uma legenda para imagem"}
                   onFocus={() => ensureElementVisibility(props.preview, textElement.source.name, 1.5)}
                   onChange={(e) =>
                     setPropertyValue(props.preview, textElement.source.name, e.target.value, modificationsRef.current)
@@ -226,7 +226,7 @@ const addSlide = async (preview: Preview) => {
     const slideName = `Slide-${lastSlideIndex}`;
 
     // Create a new slide
-    const newSlideSource = createSlide(slideName, `This is the text caption for newly added slide ${lastSlideIndex}.`);
+    const newSlideSource = createSlide(slideName, `Um novo texto aqui, referente ao slide ${lastSlideIndex}.`);
 
     // Insert the new slide
     source.elements.splice(lastSlideIndex + 1, 0, newSlideSource);

@@ -54,14 +54,16 @@ const App: React.FC = () => {
 
   return (
     <Component>
+      
       <Wrapper>
+      <img src="https://flashvolve.com/playground_assets/logo-baixa-200h.png" alt="Descrição da Imagem" style={{ position: 'absolute', top: 50, left: 50, width: 200 }} />
         <Container
           ref={(htmlElement) => {
             if (htmlElement && htmlElement !== previewRef.current?.element) {
               setUpPreview(htmlElement);
             }
           }}
-          style={{
+          style={{ top: 50,
             height:
               videoAspectRatio && windowWidth && windowWidth < 768 ? window.innerWidth / videoAspectRatio : undefined,
           }}

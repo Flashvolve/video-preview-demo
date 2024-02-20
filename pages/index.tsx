@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Video Preview Demo</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Video Flashvolve</title>
+        <link rel='icon' href='/favicon.jpg' />
       </Head>
 
       <App />
